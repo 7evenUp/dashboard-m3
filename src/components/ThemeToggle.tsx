@@ -1,26 +1,45 @@
 "use client"
 
+import { FC, HTMLAttributes, useEffect, useState } from "react"
+import { SunLight, HalfMoon } from "iconoir-react"
 import { useTheme } from "next-themes"
 
-const ThemeToggle = () => {
-  const { setTheme } = useTheme()
+import { cn } from "@/lib/cn"
+
+const ThemeToggle: FC<HTMLAttributes<HTMLButtonElement>> = ({ className }) => {
+  const [mounted, setMounted] = useState(false)
+  const { theme, setTheme } = useTheme()
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  if (!mounted) {
+    return null
+  }
+
+  const toggleTheme = () => {
+    if (theme === "light") {
+      setTheme("dark")
+    } else if (theme === "dark") {
+      setTheme("light")
+    }
+  }
+
   return (
-    <div className="flex gap-2">
-      <button
-        className="bg-slate-400 py-2 px-4 rounded-md text-light-onSurface dark:text-dark-onSurface"
-        type="button"
-        onClick={() => setTheme("light")}
-      >
-        Light
-      </button>
-      <button
-        className="bg-slate-400 py-2 px-4 rounded-md text-light-onSurface dark:text-dark-onSurface"
-        type="button"
-        onClick={() => setTheme("dark")}
-      >
-        Dark
-      </button>
-    </div>
+    <button
+      className={cn(
+        "group flex items-center justify-center w-12 h-12 rounded-full bg-transparent",
+        className
+      )}
+      onClick={toggleTheme}
+    >
+      {theme === "dark" ? (
+        <SunLight className="text-dark-onSurfaceVariant group-hover:fill-dark-onSurfaceVariant animate-in spin-in-[-90deg] zoom-in-75 fade-in-0" />
+      ) : (
+        <HalfMoon className="text-light-onSurfaceVariant group-hover:fill-light-onSurfaceVariant animate-in spin-in-90 zoom-in-75 fade-in-0" />
+      )}
+    </button>
   )
 }
 
