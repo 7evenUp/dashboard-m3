@@ -25,7 +25,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={cn(
-          "min-h-screen flex flex-col bg-light-surface dark:bg-dark-surface",
+          "min-h-screen flex flex-col bg-surface",
           roboto.className
         )}
       >
@@ -34,7 +34,7 @@ export default function RootLayout({
 
           <div className="flex flex-1">
             <Navigation />
-            <main className="flex-1 bg-light-surfaceContainer dark:bg-dark-surfaceContainer rounded-tl-[50px]">{children}</main>
+            <main className="flex-1 bg-surfaceContainer rounded-tl-[50px]">{children}</main>
           </div>
         </Providers>
       </body>

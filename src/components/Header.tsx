@@ -32,13 +32,13 @@ const Header = () => {
           <div className="flex flex-col">
             <Title
               size="large"
-              className="text-light-onSurface dark:text-dark-onSurface"
+              className="text-onSurface"
             >
               Elizabeth Stuart
             </Title>
             <Body
               size="large"
-              className="text-light-onSurfaceVariant dark:text-dark-onSurfaceVariant"
+              className="text-onSurfaceVariant"
             >
               UI Team
             </Body>

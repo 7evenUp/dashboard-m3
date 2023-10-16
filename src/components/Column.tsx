@@ -43,19 +43,19 @@ const Column = ({
   cardNotifications: number
 }) => {
   return (
-    <div className="flex flex-col w-[340px] px-4 py-3 rounded-xl bg-light-surfaceContainerLow dark:bg-dark-surfaceContainerLow">
+    <div className="flex flex-col w-[340px] px-4 py-3 rounded-xl bg-surfaceContainerLow">
       <header className="flex items-center justify-between mb-6">
         <div className="flex items-center gap-1">
           <Title
             size="large"
-            className="text-light-onSurface dark:text-dark-onSurface"
+            className="text-onSurface"
           >
             {title}
           </Title>
-          <span className="w-2 h-2 rounded-full bg-light-tertiary dark:bg-dark-tertiary" />
+          <span className="w-2 h-2 rounded-full bg-tertiary" />
           <Title
             size="large"
-            className="text-light-tertiary dark:text-dark-tertiary"
+            className="text-tertiary"
           >
             ({totalCards})
           </Title>
@@ -72,30 +72,30 @@ const Column = ({
             <div className="flex flex-col">
               <Label
                 size="large"
-                className="text-light-primary dark:text-dark-primary"
+                className="text-primary"
               >
                 {name}
               </Label>
               <Body
                 size="small"
-                className="text-light-onSurfaceVariant dark:text-dark-onSurfaceVariant"
+                className="text-onSurfaceVariant"
               >
                 {lastSeen}
               </Body>
             </div>
             <IconButton
-              className="text-light-onSurfaceVariant dark:text-dark-onSurfaceVariant ml-auto"
+              className="w-8 h-8 text-onSurfaceVariant ml-auto"
               appearance="standart"
-              icon={<MoreVert />}
+              icon={<MoreVert className="w-6 h-6" />}
             />
           </div>
-          <Title className="text-light-onSurface dark:text-dark-onSurface mt-2">
+          <Title className="text-onSurface mt-2">
             {cardName}
           </Title>
-          <Body className="text-light-onSurfaceVariant dark:text-dark-onSurfaceVariant">
+          <Body className="text-onSurfaceVariant">
             {cardContent}
           </Body>
-          <div className="flex items-center gap-3 mt-auto text-light-tertiary dark:text-dark-tertiary">
+          <div className="flex items-center gap-3 mt-auto text-tertiary">
             <div className="flex items-center gap-1 mr-auto">
               <Calendar width={16} height={16} />
               <Label>{cardDate}</Label>

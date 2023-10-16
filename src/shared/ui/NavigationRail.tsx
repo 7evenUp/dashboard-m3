@@ -17,7 +17,7 @@ const NavigationRail = ({
   return (
     <nav
       className={cn(
-        "flex flex-col items-center gap-3 min-w-[80px] px-3 bg-light-surface dark:bg-dark-surface",
+        "flex flex-col items-center gap-3 min-w-[80px] px-3 bg-surface",
         className
       )}
     >
@@ -42,30 +42,20 @@ const NavigationRailItem = ({
       href={href}
       className="group flex flex-col items-center gap-1 rounded-md outline-offset-4"
     >
-      <div
-        className={cn(
-          "rounded-full",
-          isActive &&
-            "bg-light-secondaryContainer dark:bg-dark-secondaryContainer"
-        )}
-      >
+      <div className={cn("rounded-full", isActive && "bg-secondaryContainer")}>
         <UIStateLayer
           className={cn(
             "py-1 px-4 rounded-full",
             isActive
-              ? "bg-light-onSurface dark:bg-dark-onSurface text-light-onSecondaryContainer dark:text-dark-onSecondaryContainer"
-              : "bg-light-onSurfaceVariant dark:bg-dark-onSurfaceVariant text-light-onSurfaceVariant dark:text-dark-onSurfaceVariant"
+              ? "bg-onSurface text-onSecondaryContainer"
+              : "bg-onSurfaceVariant text-onSurfaceVariant"
           )}
         >
           {children}
         </UIStateLayer>
       </div>
       <Label
-        className={cn(
-          isActive
-            ? "text-light-onSurface dark:text-dark-onSurface"
-            : "text-light-onSurfaceVariant dark:text-dark-onSurfaceVariant"
-        )}
+        className={cn(isActive ? "text-onSurface" : "text-onSurfaceVariant")}
       >
         {label}
       </Label>

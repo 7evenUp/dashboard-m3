@@ -18,7 +18,7 @@ const Toolbar = ({ className }: { className?: string }) => {
   return (
     <div
       className={cn(
-        "flex justify-between items-center rounded-xl py-3 px-4 bg-light-surfaceContainerLow dark:bg-dark-surfaceContainerLow",
+        "flex justify-between items-center rounded-xl py-3 px-4 bg-surfaceContainerLow",
         className
       )}
     >

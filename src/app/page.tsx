@@ -16,7 +16,7 @@ export default function Home() {
       <div className="flex justify-between items-center">
         <Headline
           size="large"
-          className="text-light-onSurface dark:text-dark-onSurface"
+          className="text-onSurface"
         >
           Projects
         </Headline>
